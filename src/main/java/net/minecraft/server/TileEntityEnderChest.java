@@ -1,6 +1,7 @@
 package net.minecraft.server;
 
-public class TileEntityEnderChest extends TileEntity implements IUpdatePlayerListBox {
+
+public class TileEntityEnderChest extends TileEntity { // PaperSpigot - remove IUpdatePlayerListBox
 
     public float a;
     public float f;
@@ -10,6 +11,7 @@ public class TileEntityEnderChest extends TileEntity implements IUpdatePlayerLis
     public TileEntityEnderChest() {}
 
     public void c() {
+        /*
         if (++this.h % 20 * 4 == 0) {
             this.world.playBlockAction(this.position, Blocks.ENDER_CHEST, 1, this.g);
         }
@@ -54,7 +56,7 @@ public class TileEntityEnderChest extends TileEntity implements IUpdatePlayerLis
                 this.a = 0.0F;
             }
         }
-
+        */
     }
 
     public boolean c(int i, int j) {
@@ -73,11 +75,26 @@ public class TileEntityEnderChest extends TileEntity implements IUpdatePlayerLis
 
     public void b() {
         ++this.g;
+        // PaperSpigot start - Move enderchest open sounds out of the tick loop
+        if (this.g > 0 && this.a == 0.0F) {
+            this.a = 0.7F;
+            double d1 = (double) this.getPosition().getX() + 0.5D;
+            double d0 = (double) this.getPosition().getZ() + 0.5D;
+            this.world.makeSound(d1, (double) this.getPosition().getY() + 0.5D, d0, "random.chestopen", 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+        } // PaperSpigot end
         this.world.playBlockAction(this.position, Blocks.ENDER_CHEST, 1, this.g);
     }
 
     public void d() {
         --this.g;
+        // PaperSpigot start - Move enderchest close sounds out of the tick loop
+        if (this.g == 0 && this.a > 0.0F || this.g > 0 && this.a < 1.0F) {
+            double d0 = (double) this.getPosition().getX() + 0.5D;
+            double d2 = (double) this.getPosition().getZ() + 0.5D;
+            this.world.makeSound(d0, (double) this.getPosition().getY() + 0.5D, d2, "random.chestclosed", 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+            this.a = 0.0F;
+        }
+        // PaperSpigot end
         this.world.playBlockAction(this.position, Blocks.ENDER_CHEST, 1, this.g);
     }
 

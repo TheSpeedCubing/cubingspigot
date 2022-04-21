@@ -169,6 +169,8 @@ public class EnchantmentManager {
             a((EnchantmentManager.EnchantmentModifier) EnchantmentManager.d, entityliving.bA());
         }
 
+        EnchantmentManager.e.a = null;
+        EnchantmentManager.e.b = null;
     }
 
     public static void b(EntityLiving entityliving, Entity entity) {
@@ -182,6 +184,8 @@ public class EnchantmentManager {
             a((EnchantmentManager.EnchantmentModifier) EnchantmentManager.e, entityliving.bA());
         }
 
+        EnchantmentManager.e.a = null;
+        EnchantmentManager.e.b = null;
     }
 
     public static int a(EntityLiving entityliving) {

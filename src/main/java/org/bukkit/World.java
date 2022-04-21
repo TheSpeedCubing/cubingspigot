@@ -1318,4 +1318,12 @@ public interface World extends PluginMessageRecipient, Metadatable {
             }
         }
     }
+    // PaperSpigot start - Async chunk load API
+    public static interface ChunkLoadCallback {
+        public void onLoad(Chunk chunk);
+    }
+    public void getChunkAtAsync(int x, int z, ChunkLoadCallback cb);
+    public void getChunkAtAsync(Location location, ChunkLoadCallback cb);
+    public void getChunkAtAsync(Block block, ChunkLoadCallback cb);
+    // PaperSpigot end
 }

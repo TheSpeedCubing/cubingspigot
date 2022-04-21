@@ -244,6 +244,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
         // Spigot end
         entity.setLocation(location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
         // entity.setLocation() throws no event, and so cannot be cancelled
+        entity.world.entityJoinedWorld(entity, false); // PaperSpigot - Fix issues with entities not being switched to their new chunk
         return true;
     }
 

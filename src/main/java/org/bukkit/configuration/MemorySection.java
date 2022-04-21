@@ -817,4 +817,16 @@ public class MemorySection implements ConfigurationSection {
             .append("']")
             .toString();
     }
+    public float getFloat(String path) {
+        Object def = getDefault(path);
+        return getFloat(path, (def instanceof Float) ? toFloat(def) : 0);
+    }
+    public float getFloat(String path, float def) {
+        Object val = get(path, def);
+        return (val instanceof Float) ? toFloat(val) : def;
+    }
+    public boolean isFloat(String path) {
+        Object val = get(path);
+        return val instanceof Float;
+    }
 }

@@ -5,6 +5,8 @@ import java.util.Map;
 import net.minecraft.server.GameProfileSerializer;
 import net.minecraft.server.NBTBase;
 import net.minecraft.server.NBTTagCompound;
+import net.minecraft.server.EntityPlayer;
+import net.minecraft.server.MinecraftServer;
 
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
@@ -74,7 +76,7 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
         if (profile != null) {
             NBTTagCompound owner = new NBTTagCompound();
             GameProfileSerializer.serialize(owner, profile);
-            tag.set( SKULL_OWNER.NBT, owner );
+            tag.set( SKULL_OWNER.NBT, owner);
             // Spigot start - do an async lookup of the profile. 
             // Unfortunately there is not way to refresh the holding
             // inventory, so that responsibility is left to the user.
@@ -132,7 +134,8 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
         if (name == null) {
             profile = null;
         } else {
-            profile = new GameProfile(null, name);
+            EntityPlayer player = MinecraftServer.getServer().getPlayerList().getPlayer(name);
+            profile = player != null ? player.getProfile() : new GameProfile(null, name);
         }
 
         return true;

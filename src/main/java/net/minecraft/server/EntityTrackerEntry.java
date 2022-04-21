@@ -39,7 +39,8 @@ public class EntityTrackerEntry {
     private boolean x;
     private boolean y;
     public boolean n;
-    public Set<EntityPlayer> trackedPlayers = Sets.newHashSet();
+    public java.util.Map<EntityPlayer, Boolean> trackedPlayerMap = new java.util.HashMap<EntityPlayer, Boolean>();
+    public Set<EntityPlayer> trackedPlayers = trackedPlayerMap.keySet();
 
     public EntityTrackerEntry(Entity entity, int i, int j, boolean flag) {
         this.tracker = entity;
@@ -121,6 +122,7 @@ public class EntityTrackerEntry {
                 boolean flag = Math.abs(j1) >= 4 || Math.abs(k1) >= 4 || Math.abs(l1) >= 4 || this.m % 60 == 0;
                 boolean flag1 = Math.abs(l - this.yRot) >= 4 || Math.abs(i1 - this.xRot) >= 4;
 
+                if (this.m > 0 || this.tracker instanceof EntityArrow) { // PaperSpigot - Moved up
                 // CraftBukkit start - Code moved from below
                 if (flag) {
                     this.xLoc = i;
@@ -134,7 +136,6 @@ public class EntityTrackerEntry {
                 }
                 // CraftBukkit end
 
-                if (this.m > 0 || this.tracker instanceof EntityArrow) {
                     if (j1 >= -128 && j1 < 128 && k1 >= -128 && k1 < 128 && l1 >= -128 && l1 < 128 && this.v <= 400 && !this.x && this.y == this.tracker.onGround) {
                         if ((!flag || !flag1) && !(this.tracker instanceof EntityArrow)) {
                             if (flag) {
@@ -173,7 +174,22 @@ public class EntityTrackerEntry {
                 }
 
                 if (object != null) {
+                    if (object instanceof PacketPlayOutEntityTeleport) {
                     this.broadcast((Packet) object);
+                    } else {
+                        PacketPlayOutEntityTeleport teleportPacket = null;
+                        for (java.util.Map.Entry<EntityPlayer, Boolean> viewer : trackedPlayerMap.entrySet()) {
+                            if (viewer.getValue()) {
+                                viewer.setValue(false);
+                                if (teleportPacket == null) {
+                                     teleportPacket = new PacketPlayOutEntityTeleport(this.tracker.getId(), i, j, k, (byte) l, (byte) i1, this.tracker.onGround);
+                                }
+                                viewer.getKey().playerConnection.sendPacket(teleportPacket);
+                            } else {
+                                    viewer.getKey().playerConnection.sendPacket((Packet) object);
+                            }
+                        }
+                    }
                 }
 
                 this.b();
@@ -324,7 +340,7 @@ public class EntityTrackerEntry {
 
                     entityplayer.removeQueue.remove(Integer.valueOf(this.tracker.getId()));
                     // CraftBukkit end
-                    this.trackedPlayers.add(entityplayer);
+                    this.trackedPlayerMap.put(entityplayer, true);
                     Packet packet = this.c();
 
                     entityplayer.playerConnection.sendPacket(packet);
@@ -387,8 +403,10 @@ public class EntityTrackerEntry {
                     }
 
                     // CraftBukkit start - Fix for nonsensical head yaw
+                    if(this.tracker instanceof EntityLiving) {
                     this.i = MathHelper.d(this.tracker.getHeadRotation() * 256.0F / 360.0F);
                     this.broadcast(new PacketPlayOutEntityHeadRotation(this.tracker, (byte) i));
+                    }
                     // CraftBukkit end
 
                     if (this.tracker instanceof EntityLiving) {

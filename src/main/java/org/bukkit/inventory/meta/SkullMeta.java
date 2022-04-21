@@ -1,5 +1,6 @@
 package org.bukkit.inventory.meta;
 
+import com.mojang.authlib.GameProfile;
 import org.bukkit.Material;
 
 /**

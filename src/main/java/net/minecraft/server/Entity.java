@@ -96,7 +96,16 @@ public abstract class Entity implements ICommandListener {
     protected DataWatcher datawatcher;
     private double ar;
     private double as;
-    public boolean ad; public boolean isAddedToChunk() { return ad; } // Spigot // PAIL
+    public boolean ad;
+    public  boolean isAddedToChunk() {
+        int chunkX = MathHelper.floor(locX / 16.0D);
+        int chunkY = MathHelper.floor(locY / 16.0D);
+        int chunkZ = MathHelper.floor(locZ / 16.0D);
+        return ad && getChunkX() == chunkX && getChunkY() == chunkY || getChunkZ() == chunkZ;
+    }
+    public int getChunkX() { return ae; }
+    public int getChunkY() { return af; }
+    public int getChunkZ() { return ag; }
     public int ae;
     public int af;
     public int ag;

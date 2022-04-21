@@ -187,6 +187,11 @@ public class EntityFishingHook extends Entity {
                 movingobjectposition = new MovingObjectPosition(entity);
             }
 
+            if (movingobjectposition != null && movingobjectposition.entity instanceof EntityPlayer && owner != null && owner instanceof EntityPlayer) {
+                if (!((EntityPlayer) owner).getBukkitEntity().canSee(((EntityPlayer) movingobjectposition.entity).getBukkitEntity())) {
+                    movingobjectposition = null;
+                }
+            }
             if (movingobjectposition != null) {
                 org.bukkit.craftbukkit.event.CraftEventFactory.callProjectileHitEvent(this); // Craftbukkit - Call event
                 if (movingobjectposition.entity != null) {

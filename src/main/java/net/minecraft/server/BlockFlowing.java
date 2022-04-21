@@ -88,13 +88,19 @@ public class BlockFlowing extends BlockFluids {
                     iblockdata = iblockdata.set(BlockFlowing.LEVEL, Integer.valueOf(i1));
                     world.setTypeAndData(blockposition, iblockdata, 2);
                     world.a(blockposition, (Block) this, j);
-                    world.applyPhysics(blockposition, this);
+                    world.d(blockposition.west(), this);
+                    world.d(blockposition.east(), this);
+                    world.d(blockposition.up(), this);
+                    world.d(blockposition.north(), this);
+                    world.d(blockposition.south(), this);
+                    world.spigotConfig.antiXrayInstance.updateNearbyBlocks(world, blockposition);
                 }
             }
         } else {
             this.f(world, blockposition, iblockdata);
         }
 
+        if (world.getType(blockposition).getBlock().getMaterial() != material) return;
         IBlockData iblockdata2 = world.getType(blockposition.down());
 
         if (this.h(world, blockposition.down(), iblockdata2)) {

@@ -8,6 +8,9 @@ import net.minecraft.server.Blocks;
 import net.minecraft.server.World;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class AntiXray
 {
 
@@ -51,6 +54,12 @@ public class AntiXray
     {
         if ( world.spigotConfig.antiXray )
         {
+            // PaperSpigot start
+            if ( queueUpdates ) {
+                pendingUpdates.add( position );
+                return;
+            }
+            // PaperSpigot end
             update.startTiming();
             updateNearbyBlocks( world, position, 2, false ); // 2 is the radius, we shouldn't change it as that would make it exponentially slower
             update.stopTiming();
@@ -230,5 +239,20 @@ public class AntiXray
         // case them so that the antixray doesn't show the fake
         // blocks around them.
         return block.isOccluding() && block != Blocks.MOB_SPAWNER && block != Blocks.BARRIER;
+    }
+    public boolean queueUpdates = true;
+    public final Set<BlockPosition> pendingUpdates = new HashSet<BlockPosition>();
+    /**
+    * PaperSpigot - Flush queued block updates for world.
+    */
+    public void flushUpdates(World world) {
+        if ( world.spigotConfig.antiXray && !pendingUpdates.isEmpty() ) {
+            queueUpdates = false;
+        for (BlockPosition position : pendingUpdates) {
+            updateNearbyBlocks( world, position );
+        }
+        pendingUpdates.clear();
+        queueUpdates = true;
+        }
     }
 }

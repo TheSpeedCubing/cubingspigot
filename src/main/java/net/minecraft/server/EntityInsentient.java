@@ -452,6 +452,7 @@ public abstract class EntityInsentient extends EntityLiving {
         }
     }
 
+    public PathfinderGoalFloat goalFloat; // PaperSpigot
     protected final void doTick() {
         ++this.ticksFarFromPlayer;
         this.world.methodProfiler.a("checkDespawn");
@@ -460,6 +461,12 @@ public abstract class EntityInsentient extends EntityLiving {
         // Spigot Start
         if ( this.fromMobSpawner )
         {
+            // PaperSpigot start - Allow nerfed mobs to jump
+            if (goalFloat != null) {
+                if (goalFloat.a()) goalFloat.e();
+                this.g.b();
+            }
+            // PaperSpigot end
             return;
         }
         // Spigot End

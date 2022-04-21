@@ -806,4 +806,7 @@ public interface ConfigurationSection {
      * @throws IllegalArgumentException Thrown if path is null.
      */
     public void addDefault(String path, Object value);
+    public float getFloat(String path);
+    public float getFloat(String path, float def);
+    public boolean isFloat(String path);
 }

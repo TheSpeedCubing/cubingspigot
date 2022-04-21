@@ -30,7 +30,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 public class SpigotConfig
 {
 
-    private static File CONFIG_FILE;
+    //cubing start
+    public static File CONFIG_FILE;
+    //cubing end
     private static final String HEADER = "This is the main configuration file for Spigot.\n"
             + "As you can see, there's tons to configure. Some options may impact gameplay, so use\n"
             + "with caution, and make sure you know what each option does before configuring.\n"
@@ -71,7 +73,9 @@ public class SpigotConfig
 
         version = getInt( "config-version", 8 );
         set( "config-version", 8 );
-        readConfig( SpigotConfig.class, null );
+        //cubing start
+        readConfig();
+        //cubing end
     }
 
     public static void registerCommands()
@@ -94,28 +98,34 @@ public class SpigotConfig
         }
     }
 
-    static void readConfig(Class<?> clazz, Object instance)
+    //cubing start
+    static void readConfig()
+    //cubing end
     {
-        for ( Method method : clazz.getDeclaredMethods() )
-        {
-            if ( Modifier.isPrivate( method.getModifiers() ) )
-            {
-                if ( method.getParameterTypes().length == 0 && method.getReturnType() == Void.TYPE )
-                {
-                    try
-                    {
-                        method.setAccessible( true );
-                        method.invoke( instance );
-                    } catch ( InvocationTargetException ex )
-                    {
-                        throw Throwables.propagate( ex.getCause() );
-                    } catch ( Exception ex )
-                    {
-                        Bukkit.getLogger().log( Level.SEVERE, "Error invoking " + method, ex );
-                    }
-                }
-            }
-        }
+        //cubing start
+        logCommands();
+        replaceCommands();
+        silentCommandBlocks();
+        spamExclusions();
+        tabComplete();
+        messages();
+        attributeMaxes();
+        bungee();
+        debug();
+        filterCreativeItems();
+        intCacheLimit();
+        lateBind();
+        movedTooQuicklyThreshold();
+        movedWronglyThreshold();
+        nettyThreads();
+        playerShuffle();
+        watchdog();
+        saveUserCacheOnStopOnly();
+        playerSample();
+        userCacheCap();
+        stats();
+        tpsCommand();
+        //cubing end
 
         try
         {

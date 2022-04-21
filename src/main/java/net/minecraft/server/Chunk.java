@@ -43,6 +43,8 @@ public class Chunk {
     private int v;
     private ConcurrentLinkedQueue<BlockPosition> w;
     protected gnu.trove.map.hash.TObjectIntHashMap<Class> entityCount = new gnu.trove.map.hash.TObjectIntHashMap<Class>(); // Spigot
+    private final int[] itemCounts = new int[16];
+    private final int[] inventoryEntityCounts = new int[16];
 
     // CraftBukkit start - Neighbor loaded cache for chunk lighting and entity ticking
     private int neighbors = 0x1 << 12;
@@ -441,6 +443,15 @@ public class Chunk {
     }
 
     public IBlockData getBlockData(final BlockPosition blockposition) {
+        if (blockposition.getY() >= 0 && blockposition.getY() >> 4 < this.sections.length) {
+            ChunkSection chunksection = this.sections[blockposition.getY() >> 4];
+            if (chunksection != null) {
+                return chunksection.getType(blockposition.getX() & 15, blockposition.getY() & 15, blockposition.getZ() & 15);
+            }
+        }
+        return Blocks.AIR.getBlockData();
+    }
+    public IBlockData getBlockDataSlow(final BlockPosition blockposition) {
         if (this.world.G() == WorldType.DEBUG_ALL_BLOCK_STATES) {
             IBlockData iblockdata = null;
 
@@ -675,6 +686,11 @@ public class Chunk {
         entity.af = k;
         entity.ag = this.locZ;
         this.entitySlices[k].add(entity);
+        if (entity instanceof EntityItem) {
+            itemCounts[k]++;
+        } else if (entity instanceof IInventory) {
+            inventoryEntityCounts[k]++;
+        }
         // Spigot start - increment creature type count
         // Keep this synced up with World.a(Class)
         if (entity instanceof EntityInsentient) {
@@ -707,6 +723,11 @@ public class Chunk {
         }
 
         this.entitySlices[i].remove(entity);
+        if (entity instanceof EntityItem) {
+            itemCounts[i]--;
+        } else if (entity instanceof IInventory) {
+            inventoryEntityCounts[i]--;
+        }
         // Spigot start - decrement creature type count
         // Keep this synced up with World.a(Class)
         if (entity instanceof EntityInsentient) {
@@ -891,6 +912,7 @@ public class Chunk {
             if (!this.entitySlices[k].isEmpty()) {
                 Iterator iterator = this.entitySlices[k].iterator();
 
+                if (predicate == IEntitySelector.c && inventoryEntityCounts[k] <= 0) continue;
                 while (iterator.hasNext()) {
                     Entity entity1 = (Entity) iterator.next();
 
@@ -923,9 +945,18 @@ public class Chunk {
         i = MathHelper.clamp(i, 0, this.entitySlices.length - 1);
         j = MathHelper.clamp(j, 0, this.entitySlices.length - 1);
 
+        int[] counts;
+        if (ItemStack.class.isAssignableFrom(oclass)) {
+            counts = itemCounts;
+        } else if (IInventory.class.isAssignableFrom(oclass)) {
+            counts = inventoryEntityCounts;
+        } else {
+            counts = null;
+        }
         for (int k = i; k <= j; ++k) {
             Iterator iterator = this.entitySlices[k].iterator(); // Spigot
 
+            if (counts != null && counts[k] <= 0) continue; // PaperSpigot - Don't check a chunk if it doesn't have the type we are looking for
             while (iterator.hasNext()) {
                 Entity entity = (Entity) iterator.next();
 
@@ -1358,5 +1389,11 @@ public class Chunk {
         IMMEDIATE, QUEUED, CHECK;
 
         private EnumTileEntityState() {}
+    }
+    public int getItemCount(BlockPosition blockPosition) {
+        int k = MathHelper.floor(blockPosition.getY() / 16.0D);
+        k = Math.max(0, k);
+        k = Math.min(this.entitySlices.length - 1, k);
+        return itemCounts[k];
     }
 }

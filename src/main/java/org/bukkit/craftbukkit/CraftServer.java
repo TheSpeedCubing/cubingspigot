@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -638,6 +639,27 @@ public final class CraftServer implements Server {
         Validate.notNull(sender, "Sender cannot be null");
         Validate.notNull(commandLine, "CommandLine cannot be null");
 
+        if (!Bukkit.isPrimaryThread()) {
+            final CommandSender fSender = sender;
+            final String fCommandLine = commandLine;
+            Bukkit.getLogger().log(Level.SEVERE, "Command Dispatched Async: " + commandLine);
+            Bukkit.getLogger().log(Level.SEVERE, "Please notify author of plugin causing this execution to fix this bug! see: http://bit.ly/1oSiM6C", new Throwable());
+            org.bukkit.craftbukkit.util.Waitable<Boolean> wait = new org.bukkit.craftbukkit.util.Waitable<Boolean>() {
+                @Override
+                protected Boolean evaluate() {
+                    return dispatchCommand(fSender, fCommandLine);
+                }
+            };
+            net.minecraft.server.MinecraftServer.getServer().processQueue.add(wait);
+            try {
+                return wait.get();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt(); // This is proper habit for java. If we aren't handling it, pass it on!
+            } catch (Exception e) {
+                throw new RuntimeException("Exception processing dispatch command", e.getCause());
+            }
+        }
+        // PaperSpigot End
         if (commandMap.dispatch(sender, commandLine)) {
             return true;
         }
@@ -973,6 +995,20 @@ public final class CraftServer implements Server {
             } catch (ExceptionWorldConflict ex) {
                 getLogger().log(Level.SEVERE, null, ex);
             }
+        } else { // FlamePaper - Fix chunk memory leak
+            ChunkProviderServer chunkProviderServer = handle.chunkProviderServer;
+            ChunkRegionLoader regionLoader = (ChunkRegionLoader) chunkProviderServer.chunkLoader;
+            regionLoader.b.clear();
+            regionLoader.c.clear();
+            try {
+                FileIOThread.a().b();
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            chunkProviderServer.unloadChunks(true);
+            chunkProviderServer.chunkLoader = null;
+            chunkProviderServer.chunkProvider = null;
+            chunkProviderServer.chunks.clear();
         }
 
         worlds.remove(world.getName().toLowerCase());

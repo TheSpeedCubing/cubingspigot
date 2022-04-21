@@ -17,8 +17,8 @@ import org.apache.logging.log4j.Logger;
 public class ChunkRegionLoader implements IChunkLoader, IAsyncChunkSaver {
 
     private static final Logger a = LogManager.getLogger();
-    private Map<ChunkCoordIntPair, NBTTagCompound> b = new ConcurrentHashMap();
-    private Set<ChunkCoordIntPair> c = Collections.newSetFromMap(new ConcurrentHashMap());
+    public Map<ChunkCoordIntPair, NBTTagCompound> b = new ConcurrentHashMap();
+    public Set<ChunkCoordIntPair> c = Collections.newSetFromMap(new ConcurrentHashMap());
     private final File d;
     private boolean e = false;
 
@@ -36,7 +36,8 @@ public class ChunkRegionLoader implements IChunkLoader, IAsyncChunkSaver {
             }
         }
 
-        return RegionFileCache.a(this.d, i, j).chunkExists(i & 31, j & 31);
+        final RegionFile region = RegionFileCache.a(this.d, i, j, false); // PaperSpigot
+        return region != null && region.chunkExists(i & 31, j & 31); // PaperSpigot
     }
     // CraftBukkit end
 

@@ -231,7 +231,9 @@ public class WorldServer extends World implements IAsyncTaskHandler {
         // CraftBukkit end
         timings.doChunkUnload.startTiming(); // Spigot
         this.methodProfiler.c("chunkSource");
+        if (this.chunkProvider != null) {
         this.chunkProvider.unloadChunks();
+        }
         int j = this.a(1.0F);
 
         if (j != this.ab()) {
@@ -252,6 +254,7 @@ public class WorldServer extends World implements IAsyncTaskHandler {
         timings.doTickTiles.startTiming(); // Spigot
         this.h();
         timings.doTickTiles.stopTiming(); // Spigot
+        spigotConfig.antiXrayInstance.flushUpdates(this); // PaperSpigot
         this.methodProfiler.c("chunkMap");
         timings.doChunkMap.startTiming(); // Spigot
         this.manager.flush();

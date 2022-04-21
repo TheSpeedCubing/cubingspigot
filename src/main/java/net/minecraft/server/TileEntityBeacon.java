@@ -13,7 +13,6 @@ import org.bukkit.entity.HumanEntity;
 public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlayerListBox, IInventory {
 
     public static final MobEffectList[][] a = new MobEffectList[][] { { MobEffectList.FASTER_MOVEMENT, MobEffectList.FASTER_DIG}, { MobEffectList.RESISTANCE, MobEffectList.JUMP}, { MobEffectList.INCREASE_DAMAGE}, { MobEffectList.REGENERATION}};
-    private final List<TileEntityBeacon.BeaconColorTracker> f = Lists.newArrayList();
     private boolean i;
     private int j = -1;
     private int k;
@@ -22,6 +21,18 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
     private String n;
     // CraftBukkit start - add fields and methods
     public List<HumanEntity> transaction = new java.util.ArrayList<HumanEntity>();
+    public boolean isEnabled() {
+        return i;
+    }
+    public void setEnabled(boolean state) {
+        this.i = state;
+    }
+    public int getLevel() {
+        return j;
+    }
+    public void setLevel(int newLevel) {
+        this.j = newLevel;
+    }
     private int maxStack = MAX_STACK;
 
     public ItemStack[] getContents() {
@@ -60,33 +71,26 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
     }
 
     private void A() {
-        if (this.i && this.j > 0 && !this.world.isClientSide && this.k > 0) {
-            double d0 = (double) (this.j * 10 + 10);
+        if (isEnabled() && getLevel() > 0 && !this.world.isClientSide && this.k > 0) {
+            double radius = getLevel() * 10 + 10;
             byte b0 = 0;
 
-            if (this.j >= 4 && this.k == this.l) {
+            if (getLevel() >= 4 && this.k == this.l) {
                 b0 = 1;
             }
 
             int i = this.position.getX();
             int j = this.position.getY();
             int k = this.position.getZ();
-            AxisAlignedBB axisalignedbb = (new AxisAlignedBB((double) i, (double) j, (double) k, (double) (i + 1), (double) (j + 1), (double) (k + 1))).grow(d0, d0, d0).a(0.0D, (double) this.world.getHeight(), 0.0D);
-            List list = this.world.a(EntityHuman.class, axisalignedbb);
-            Iterator iterator = list.iterator();
-
-            EntityHuman entityhuman;
-
-            while (iterator.hasNext()) {
-                entityhuman = (EntityHuman) iterator.next();
+            AxisAlignedBB axisalignedbb = new AxisAlignedBB(i, j, k, i + 1, j + 1, k + 1)
+            .grow(radius, radius, radius).a(0.0D, this.world.getHeight(), 0.0D);
+            List<EntityHuman> list = this.world.a(EntityHuman.class, axisalignedbb);
+            for (EntityHuman entityhuman : list) {
                 entityhuman.addEffect(new MobEffect(this.k, 180, b0, true, true));
             }
 
-            if (this.j >= 4 && this.k != this.l && this.l > 0) {
-                iterator = list.iterator();
-
-                while (iterator.hasNext()) {
-                    entityhuman = (EntityHuman) iterator.next();
+            if (getLevel() >= 4 && this.k != this.l && this.l > 0) {
+            for (EntityHuman entityhuman : list) {
                     entityhuman.addEffect(new MobEffect(this.l, 180, 0, true, true));
                 }
             }
@@ -95,59 +99,23 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
     }
 
     private void B() {
-        int i = this.j;
         int j = this.position.getX();
         int k = this.position.getY();
         int l = this.position.getZ();
-
-        this.j = 0;
-        this.f.clear();
-        this.i = true;
-        TileEntityBeacon.BeaconColorTracker tileentitybeacon_beaconcolortracker = new TileEntityBeacon.BeaconColorTracker(EntitySheep.a(EnumColor.WHITE));
-
-        this.f.add(tileentitybeacon_beaconcolortracker);
-        boolean flag = true;
-        BlockPosition.MutableBlockPosition blockposition_mutableblockposition = new BlockPosition.MutableBlockPosition();
-
-        int i1;
-
-        for (i1 = k + 1; i1 < 256; ++i1) {
-            IBlockData iblockdata = this.world.getType(blockposition_mutableblockposition.c(j, i1, l));
-            float[] afloat;
-
-            if (iblockdata.getBlock() == Blocks.STAINED_GLASS) {
-                afloat = EntitySheep.a((EnumColor) iblockdata.get(BlockStainedGlass.COLOR));
-            } else {
-                if (iblockdata.getBlock() != Blocks.STAINED_GLASS_PANE) {
-                    if (iblockdata.getBlock().p() >= 15 && iblockdata.getBlock() != Blocks.BEDROCK) {
-                        this.i = false;
-                        this.f.clear();
+        int prevLevel = getLevel();
+        setLevel(0);
+        setEnabled(true);
+        BlockPosition.MutableBlockPosition mutableBlockPosition = new BlockPosition.MutableBlockPosition();
+        for (int y = k + 1; y < 256; ++y) {
+            Block block = this.world.getType(mutableBlockPosition.c(j, y, l)).getBlock();
+            if (block != Blocks.STAINED_GLASS && block != Blocks.STAINED_GLASS_PANE && block.p() >= 15 && block != Blocks.BEDROCK) {
+                setEnabled(false);
                         break;
                     }
-
-                    tileentitybeacon_beaconcolortracker.a();
-                    continue;
-                }
-
-                afloat = EntitySheep.a((EnumColor) iblockdata.get(BlockStainedGlassPane.COLOR));
-            }
-
-            if (!flag) {
-                afloat = new float[] { (tileentitybeacon_beaconcolortracker.b()[0] + afloat[0]) / 2.0F, (tileentitybeacon_beaconcolortracker.b()[1] + afloat[1]) / 2.0F, (tileentitybeacon_beaconcolortracker.b()[2] + afloat[2]) / 2.0F};
-            }
-
-            if (Arrays.equals(afloat, tileentitybeacon_beaconcolortracker.b())) {
-                tileentitybeacon_beaconcolortracker.a();
-            } else {
-                tileentitybeacon_beaconcolortracker = new TileEntityBeacon.BeaconColorTracker(afloat);
-                this.f.add(tileentitybeacon_beaconcolortracker);
-            }
-
-            flag = false;
         }
 
-        if (this.i) {
-            for (i1 = 1; i1 <= 4; this.j = i1++) {
+            if(isEnabled()){
+                for (int i1 = 1; i1 <= 4; setLevel(i1++)) {
                 int j1 = k - i1;
 
                 if (j1 < 0) {
@@ -172,17 +140,14 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
                 }
             }
 
-            if (this.j == 0) {
+            if (getLevel()==0) {
                 this.i = false;
             }
         }
 
-        if (!this.world.isClientSide && this.j == 4 && i < this.j) {
-            Iterator iterator = this.world.a(EntityHuman.class, (new AxisAlignedBB((double) j, (double) k, (double) l, (double) j, (double) (k - 4), (double) l)).grow(10.0D, 5.0D, 10.0D)).iterator();
-
-            while (iterator.hasNext()) {
-                EntityHuman entityhuman = (EntityHuman) iterator.next();
-
+        if (!this.world.isClientSide && getLevel() == 4 && prevLevel < getLevel()) {
+            AxisAlignedBB bb = new AxisAlignedBB(j, k, l, j, k - 4, l).grow(10.0D, 5.0D, 10.0D);
+            for (EntityHuman entityhuman : this.world.a(EntityHuman.class, bb)) {
                 entityhuman.b((Statistic) AchievementList.K);
             }
         }
@@ -210,14 +175,14 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
         super.a(nbttagcompound);
         this.k = this.h(nbttagcompound.getInt("Primary"));
         this.l = this.h(nbttagcompound.getInt("Secondary"));
-        this.j = nbttagcompound.getInt("Levels");
+        setLevel(nbttagcompound.getInt("Levels"));
     }
 
     public void b(NBTTagCompound nbttagcompound) {
         super.b(nbttagcompound);
         nbttagcompound.setInt("Primary", this.k);
         nbttagcompound.setInt("Secondary", this.l);
-        nbttagcompound.setInt("Levels", this.j);
+        nbttagcompound.setInt("Levels", getLevel());
     }
 
     public int getSize() {
@@ -301,8 +266,8 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
     public int getProperty(int i) {
         switch (i) {
         case 0:
-            return this.j;
 
+            return getLevel();
         case 1:
             return this.k;
 
@@ -317,7 +282,7 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
     public void b(int i, int j) {
         switch (i) {
         case 0:
-            this.j = j;
+            setLevel(j);
             break;
 
         case 1:
@@ -347,22 +312,4 @@ public class TileEntityBeacon extends TileEntityContainer implements IUpdatePlay
         }
     }
 
-    public static class BeaconColorTracker {
-
-        private final float[] a;
-        private int b;
-
-        public BeaconColorTracker(float[] afloat) {
-            this.a = afloat;
-            this.b = 1;
-        }
-
-        protected void a() {
-            ++this.b;
-        }
-
-        public float[] b() {
-            return this.a;
-        }
-    }
 }

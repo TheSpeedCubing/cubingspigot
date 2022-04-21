@@ -183,7 +183,10 @@ public class CraftWorld implements World {
             return false;
         }
 
-        net.minecraft.server.Chunk chunk = world.chunkProviderServer.getOrCreateChunk(x, z);
+        net.minecraft.server.Chunk chunk = world.chunkProviderServer.getChunkIfLoaded(x, z);
+        if (chunk == null) {
+            return false;
+        }
         if (chunk.mustSave) {   // If chunk had previously been queued to save, must do save to avoid loss of that data
             save = true;
         }
@@ -1476,4 +1479,19 @@ public class CraftWorld implements World {
         return spigot;
     }
     // Spigot end
+    public void getChunkAtAsync(final int x, final int z, final ChunkLoadCallback callback) {
+        final ChunkProviderServer cps = this.world.chunkProviderServer;
+        cps.getChunkAt(x, z, new Runnable() {
+            @Override
+            public void run() {
+                callback.onLoad(cps.getChunkAt(x, z).bukkitChunk);
+            }
+        });
+    }
+    public void getChunkAtAsync(Block block, ChunkLoadCallback callback) {
+        getChunkAtAsync(block.getX() >> 4, block.getZ() >> 4, callback);
+    }
+    public void getChunkAtAsync(Location location, ChunkLoadCallback callback) {
+        getChunkAtAsync(location.getBlockX() >> 4, location.getBlockZ() >> 4, callback);
+    }
 }

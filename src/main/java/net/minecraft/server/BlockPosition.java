@@ -123,7 +123,7 @@ public class BlockPosition extends BaseBlockPosition {
         return new BlockPosition(j, k, l);
     }
 
-    public static Iterable<BlockPosition> a(BlockPosition blockposition, BlockPosition blockposition1) {
+    public static Iterable<BlockPosition> a(final BlockPosition blockposition,final BlockPosition blockposition1) {
         final BlockPosition blockposition2 = new BlockPosition(Math.min(blockposition.getX(), blockposition1.getX()), Math.min(blockposition.getY(), blockposition1.getY()), Math.min(blockposition.getZ(), blockposition1.getZ()));
         final BlockPosition blockposition3 = new BlockPosition(Math.max(blockposition.getX(), blockposition1.getX()), Math.max(blockposition.getY(), blockposition1.getY()), Math.max(blockposition.getZ(), blockposition1.getZ()));
 
@@ -167,7 +167,7 @@ public class BlockPosition extends BaseBlockPosition {
         };
     }
 
-    public static Iterable<BlockPosition.MutableBlockPosition> b(BlockPosition blockposition, BlockPosition blockposition1) {
+    public static Iterable<BlockPosition.MutableBlockPosition> b(final BlockPosition blockposition,final BlockPosition blockposition1) {
         final BlockPosition blockposition2 = new BlockPosition(Math.min(blockposition.getX(), blockposition1.getX()), Math.min(blockposition.getY(), blockposition1.getY()), Math.min(blockposition.getZ(), blockposition1.getZ()));
         final BlockPosition blockposition3 = new BlockPosition(Math.max(blockposition.getX(), blockposition1.getX()), Math.max(blockposition.getY(), blockposition1.getY()), Math.max(blockposition.getZ(), blockposition1.getZ()));
 
@@ -198,9 +198,14 @@ public class BlockPosition extends BaseBlockPosition {
                                 ++k;
                             }
 
-                            this.b.c = i;
-                            this.b.d = j;
-                            this.b.e = k;
+//                            this.b.c = i;
+//                            this.b.d = j;
+//                            this.b.e = k;
+                            // PaperSpigot start
+                            this.b.setX(i);
+                            this.b.setY(j);
+                            this.b.setZ(k);
+                            // PaperSpigot stop
                             return this.b;
                         }
                     }
@@ -219,9 +224,22 @@ public class BlockPosition extends BaseBlockPosition {
 
     public static final class MutableBlockPosition extends BlockPosition {
 
-        private int c;
-        private int d;
-        private int e;
+        // PaperSpigot start - remove our overriding variables
+//        private int c;
+//        private int d;
+//        private int e;
+        public void setX(int x) {
+            ((BaseBlockPosition) this).a = x;
+        }
+
+        public void setY(int y) {
+            ((BaseBlockPosition) this).c = y;
+        }
+
+        public void setZ(int z) {
+            ((BaseBlockPosition) this).d = z;
+        }
+        // PaperSpigot end
 
         public MutableBlockPosition() {
             this(0, 0, 0);
@@ -229,27 +247,33 @@ public class BlockPosition extends BaseBlockPosition {
 
         public MutableBlockPosition(int i, int j, int k) {
             super(0, 0, 0);
-            this.c = i;
-            this.d = j;
-            this.e = k;
+//            this.c = i;
+//            this.d = j;
+//            this.e = k;
+            this.setX(i);
+            this.setY(j);
+            this.setZ(k);
         }
 
-        public int getX() {
-            return this.c;
-        }
-
-        public int getY() {
-            return this.d;
-        }
-
-        public int getZ() {
-            return this.e;
-        }
+//        public int getX() {
+//            return this.c;
+//        }
+//
+//        public int getY() {
+//            return this.d;
+//        }
+//
+//        public int getZ() {
+//            return this.e;
+//        }
 
         public BlockPosition.MutableBlockPosition c(int i, int j, int k) {
-            this.c = i;
-            this.d = j;
-            this.e = k;
+//            this.c = i;
+//            this.d = j;
+//            this.e = k;
+            setX(i);
+            setY(j);
+            setZ(k);
             return this;
         }
 

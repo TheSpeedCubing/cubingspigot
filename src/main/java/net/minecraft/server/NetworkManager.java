@@ -239,6 +239,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet> {
     }
 
     public void close(IChatBaseComponent ichatbasecomponent) {
+        this.i.clear(); // FlamePaper - Minetick fix memory leaks
         // Spigot Start
         this.preparing = false;
         // Spigot End
@@ -322,6 +323,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet> {
     }
 
     protected void channelRead0(ChannelHandlerContext channelhandlercontext, Packet object) throws Exception { // CraftBukkit - fix decompile error
+        // FlamePaper - Check if channel is opened before reading packet
+        if (g())
         this.a(channelhandlercontext, (Packet) object);
     }
 

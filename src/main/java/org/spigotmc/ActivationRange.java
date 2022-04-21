@@ -30,6 +30,7 @@ import net.minecraft.server.EntityWither;
 import net.minecraft.server.MathHelper;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.World;
+import net.minecraft.server.EntityFallingBlock;
 import org.bukkit.craftbukkit.SpigotTimings;
 import org.bukkit.entity.Creeper;
 
@@ -82,6 +83,7 @@ public class ActivationRange
                 || entity instanceof EntityFireball
                 || entity instanceof EntityWeather
                 || entity instanceof EntityTNTPrimed
+                || entity instanceof EntityFallingBlock // PaperSpigot - Always tick falling blocks
                 || entity instanceof EntityEnderCrystal
                 || entity instanceof EntityFireworks )
         {

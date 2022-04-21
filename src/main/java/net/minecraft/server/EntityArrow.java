@@ -220,6 +220,11 @@ public class EntityArrow extends Entity implements IProjectile {
             float f2;
             float f3;
 
+            if (movingobjectposition != null && movingobjectposition.entity instanceof EntityPlayer && shooter != null && shooter instanceof EntityPlayer) {
+                if (!((EntityPlayer) shooter).getBukkitEntity().canSee(((EntityPlayer) movingobjectposition.entity).getBukkitEntity())) {
+                    movingobjectposition = null;
+                }
+            }
             if (movingobjectposition != null) {
                 org.bukkit.craftbukkit.event.CraftEventFactory.callProjectileHitEvent(this); // CraftBukkit - Call event
                 if (movingobjectposition.entity != null) {

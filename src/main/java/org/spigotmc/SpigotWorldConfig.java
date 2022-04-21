@@ -1,9 +1,14 @@
 package org.spigotmc;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import static org.spigotmc.SpigotConfig.CONFIG_FILE;
 
 public class SpigotWorldConfig
 {
@@ -24,7 +29,39 @@ public class SpigotWorldConfig
         this.verbose = getBoolean( "verbose", true );
 
         log( "-------- World Settings For [" + worldName + "] --------" );
-        SpigotConfig.readConfig( SpigotWorldConfig.class, this );
+        //cubing start
+        antiXray();
+        arrowDespawnRate();
+        enableZombiePigmenPortalSpawns();
+        chunksPerTick();
+        keepDragonDeathPerWorld();
+        activationRange();
+        trackingRange();
+        growthModifiers();
+        hangingTickFrequency();
+        initHunger();
+        itemDespawnRate();
+        bulkChunkCount();
+        maxEntityCollision();
+        maxTickTimes();
+        maxTntPerTick();
+        itemMerge();
+        expMerge();
+        mobSpawnRange();
+        nerfSpawnerMobs();
+        lightUpdates();
+        structureInfo();
+        initWorldGenSeeds();
+        hoppers();
+        viewDistance();
+        witherSpawnSoundRadius();
+        zombieAggressiveTowardsVillager();
+        try
+        { config.save( CONFIG_FILE );
+        } catch ( IOException ex )
+        { Bukkit.getLogger().log( Level.SEVERE, "Could not save " + CONFIG_FILE, ex );
+        }
+        //cubing end
     }
 
     private void log(String s)

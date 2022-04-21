@@ -3,7 +3,9 @@ package net.minecraft.server;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Floats;
-import com.google.common.util.concurrent.Futures;
+import cubing.lib.bukkit.Event.ServerEventManager;
+import cubing.lib.bukkit.Event.events.PlayInChatEvent;
+import cubing.lib.bukkit.Event.events.PlayInUseEntityEvent;
 import io.netty.buffer.Unpooled;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
@@ -949,6 +951,12 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
         if (packetplayinchat.a().startsWith("/")) {
             PlayerConnectionUtils.ensureMainThread(packetplayinchat, this, this.player.u());
         }
+        //cubing start
+        PlayInChatEvent inChatEvent = new PlayInChatEvent(player.getBukkitEntity(),packetplayinchat);
+        ServerEventManager.callEvent(inChatEvent);
+        if (inChatEvent.isCancelled)
+            return;
+        //cubing end
         // CraftBukkit end
         if (this.player.dead || this.player.getChatFlags() == EntityHuman.EnumChatVisibility.HIDDEN) { // CraftBukkit - dead men tell no tales
             ChatMessage chatmessage = new ChatMessage("chat.cannotSend", new Object[0]);
@@ -1075,6 +1083,29 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
         }
 
         if (!async && s.startsWith("/")) {
+            // PaperSpigot Start
+            if (!org.bukkit.Bukkit.isPrimaryThread()) {
+                final String fCommandLine = s;
+                MinecraftServer.LOGGER.log(org.apache.logging.log4j.Level.ERROR, "Command Dispatched Async: " + fCommandLine);
+                MinecraftServer.LOGGER.log(org.apache.logging.log4j.Level.ERROR, "Please notify author of plugin causing this execution to fix this bug! see: http://bit.ly/1oSiM6C", new Throwable());
+                Waitable wait = new Waitable() {
+                    @Override
+                    protected Object evaluate() {
+                        chat(fCommandLine, false);
+                        return null;
+                    }
+                };
+                minecraftServer.processQueue.add(wait);
+                try {
+                    wait.get();
+                    return;
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // This is proper habit for java. If we aren't handling it, pass it on!
+                } catch (Exception e) {
+                    throw new RuntimeException("Exception processing chat command", e.getCause());
+                }
+            }
+            // PaperSpigot End
             this.handleCommand(s);
         } else if (this.player.getChatFlags() == EntityHuman.EnumChatVisibility.SYSTEM) {
             // Do nothing, this is coming from a plugin
@@ -1278,6 +1309,12 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
     public void a(PacketPlayInUseEntity packetplayinuseentity) {
         if (this.player.dead) return; // CraftBukkit
         PlayerConnectionUtils.ensureMainThread(packetplayinuseentity, this, this.player.u());
+        //cubing start
+        PlayInUseEntityEvent inUseEntityEvent = new PlayInUseEntityEvent(player.getBukkitEntity(),packetplayinuseentity);
+        ServerEventManager.callEvent(inUseEntityEvent);
+        if (inUseEntityEvent.isCancelled)
+            return;
+        //cubing end
         WorldServer worldserver = this.minecraftServer.getWorldServer(this.player.dimension);
         Entity entity = packetplayinuseentity.a((World) worldserver);
         // Spigot Start
