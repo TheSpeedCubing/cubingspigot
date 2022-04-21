@@ -5,13 +5,9 @@ import com.google.common.base.Objects;
 public class BaseBlockPosition implements Comparable<BaseBlockPosition> {
 
     public static final BaseBlockPosition ZERO = new BaseBlockPosition(0, 0, 0);
-//    private final int a;
-//    private final int c;
-//    private final int d;
     protected int a;
     protected int c;
     protected int d;
-    // PaperSpigot end
 
     public BaseBlockPosition(int i, int j, int k) {
         this.a = i;
@@ -83,9 +79,7 @@ public class BaseBlockPosition implements Comparable<BaseBlockPosition> {
         return Objects.toStringHelper(this).add("x", this.getX()).add("y", this.getY()).add("z", this.getZ()).toString();
     }
 
-// Paperspigot - Signature change, Object -> BaseBlockPosition
       public int compareTo(BaseBlockPosition object) {
-//    public int compareTo(Object object) {
         return this.g((BaseBlockPosition) object);
     }
 }

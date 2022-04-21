@@ -198,14 +198,9 @@ public class BlockPosition extends BaseBlockPosition {
                                 ++k;
                             }
 
-//                            this.b.c = i;
-//                            this.b.d = j;
-//                            this.b.e = k;
-                            // PaperSpigot start
                             this.b.setX(i);
                             this.b.setY(j);
                             this.b.setZ(k);
-                            // PaperSpigot stop
                             return this.b;
                         }
                     }
@@ -224,10 +219,6 @@ public class BlockPosition extends BaseBlockPosition {
 
     public static final class MutableBlockPosition extends BlockPosition {
 
-        // PaperSpigot start - remove our overriding variables
-//        private int c;
-//        private int d;
-//        private int e;
         public void setX(int x) {
             ((BaseBlockPosition) this).a = x;
         }
@@ -255,22 +246,8 @@ public class BlockPosition extends BaseBlockPosition {
             this.setZ(k);
         }
 
-//        public int getX() {
-//            return this.c;
-//        }
-//
-//        public int getY() {
-//            return this.d;
-//        }
-//
-//        public int getZ() {
-//            return this.e;
-//        }
 
         public BlockPosition.MutableBlockPosition c(int i, int j, int k) {
-//            this.c = i;
-//            this.d = j;
-//            this.e = k;
             setX(i);
             setY(j);
             setZ(k);

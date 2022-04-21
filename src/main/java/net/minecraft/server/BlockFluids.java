@@ -148,7 +148,6 @@ public abstract class BlockFluids extends Block {
             if (flag) {
                 Integer integer = (Integer) iblockdata.get(BlockFluids.LEVEL);
 
-//                if (integer.intValue() == 0) {
                 if (integer.intValue() > 0) { // PaperSpigot
                     world.setTypeUpdate(blockposition, Blocks.OBSIDIAN.getBlockData());
                     this.fizz(world, blockposition);
