@@ -1390,6 +1390,7 @@ public class Chunk {
 
         private EnumTileEntityState() {}
     }
+    //flame 0035 1
     public int getItemCount(BlockPosition blockPosition) {
         int k = MathHelper.floor(blockPosition.getY() / 16.0D);
         k = Math.max(0, k);

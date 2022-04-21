@@ -56,6 +56,7 @@ public class TileEntityEnderChest extends TileEntity { // PaperSpigot - remove I
                 this.a = 0.0F;
             }
         }
+
         */
     }
 

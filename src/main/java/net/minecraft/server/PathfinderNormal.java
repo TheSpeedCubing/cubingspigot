@@ -158,8 +158,6 @@ public class PathfinderNormal extends PathfinderAbstract {
                             flag3 = true;
                         }
 
-//                        if (entity.world.getType(blockposition_mutableblockposition).getBlock() instanceof BlockMinecartTrackAbstract) {
-//                            if (!(entity.world.getType(blockposition).getBlock() instanceof BlockMinecartTrackAbstract) && !(entity.world.getType(blockposition.down()).getBlock() instanceof BlockMinecartTrackAbstract)) {
                         if (block instanceof BlockMinecartTrackAbstract) { // PaperSpigot - Pathfinder optimizations
                              if (!(iblockaccess.getType(blockposition).getBlock() instanceof BlockMinecartTrackAbstract) && !(iblockaccess.getType(blockposition.down()).getBlock() instanceof BlockMinecartTrackAbstract)) { // PaperSpigot - Pathfinder optimizations
 
