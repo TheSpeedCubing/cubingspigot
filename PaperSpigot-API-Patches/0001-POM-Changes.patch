@@ -1,0 +1,36 @@
+From 86aab29f656a5133477de0e7e15a4021417f9dcd Mon Sep 17 00:00:00 2001
+From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
+Date: Sun, 13 Mar 2022 20:01:20 -0300
+Subject: [PATCH] POM Changes
+
+
+diff --git a/pom.xml b/pom.xml
+index fe9d6d26..6f4601d8 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -4,17 +4,17 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>org.github.paperspigot</groupId>
+-        <artifactId>paperspigot-parent</artifactId>
++        <groupId>dev._2lstudios</groupId>
++        <artifactId>flamepaper-parent</artifactId>
+         <version>dev-SNAPSHOT</version>
+     </parent>
+ 
+-    <groupId>org.github.paperspigot</groupId>
+-    <artifactId>paperspigot-api</artifactId>
++    <groupId>dev._2lstudios</groupId>
++    <artifactId>flamepaper-api</artifactId>
+     <version>1.8.8-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>PaperSpigot-API</name>
++    <name>FlamePaper-API</name>
+     <url>https://hub.spigotmc.org/stash/projects/PAPER/</url>
+     <description>An enhanced plugin API for Minecraft servers.</description>
+ 
+-- 
+2.32.0
+
