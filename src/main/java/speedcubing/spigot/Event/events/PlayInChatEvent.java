@@ -1,4 +1,4 @@
-package cubing.lib.bukkit.Event.events;
+package speedcubing.spigot.Event.events;
 
 import net.minecraft.server.PacketPlayInChat;
 import org.bukkit.entity.Player;

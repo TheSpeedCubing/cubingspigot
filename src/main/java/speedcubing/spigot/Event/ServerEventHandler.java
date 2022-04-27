@@ -1,4 +1,4 @@
-package cubing.lib.bukkit.Event;
+package speedcubing.spigot.Event;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

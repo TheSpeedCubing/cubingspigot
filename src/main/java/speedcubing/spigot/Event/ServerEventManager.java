@@ -1,4 +1,4 @@
-package cubing.lib.bukkit.Event;
+package speedcubing.spigot.Event;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
