@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.bukkit.craftbukkit.inventory.ItemFactoryTest" time="1.212" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="org.bukkit.craftbukkit.inventory.ItemFactoryTest" time="1.109" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin"/>
-    <property name="java.vm.version" value="25.202-b08"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\bin"/>
+    <property name="java.vm.version" value="25.311-b11"/>
     <property name="user.country.format" value="TW"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="maven.multiModuleProjectDirectory" value="C:/Users/andyt/Desktop/MinecraftServer/Development/Projects/Spigot-Server"/>
@@ -18,9 +18,9 @@
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\andyt\Desktop\MinecraftServer\Development\Projects\Spigot-Server"/>
-    <property name="java.runtime.version" value="1.8.0_202-b08"/>
+    <property name="java.runtime.version" value="1.8.0_311-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\andyt\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
@@ -29,7 +29,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:/Program Files/apache-maven-3.8.3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\andyt\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\andyt\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs;C:\Program Files (x86)\QuickTime\QTSystem;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\apache-maven-3.8.3\bin;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\andyt\AppData\Local\Programs\Python\Python39;C:\ffmpeg\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Microsoft\WindowsApps;C:\Users\andyt\AppData\Roaming\npm;C:\Users\andyt\AppData\Local\Programs\Microsoft VS Code\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_311\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\andyt\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\andyt\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\apache-maven-3.8.3\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Microsoft\WindowsApps;C:\Users\andyt\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
     <property name="maven.conf" value="C:/Program Files/apache-maven-3.8.3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -45,16 +45,16 @@
     <property name="java.class.path" value="C:/Program Files/apache-maven-3.8.3/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_202\jre"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_311\jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="zh"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_202"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_202\jre\classes"/>
+    <property name="java.version" value="1.8.0_311"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_311\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Program Files\apache-maven-3.8.3"/>
     <property name="file.separator" value="\"/>
@@ -64,5 +64,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testKnownAttributes" classname="org.bukkit.craftbukkit.inventory.ItemFactoryTest" time="1.212"/>
+  <testcase name="testKnownAttributes" classname="org.bukkit.craftbukkit.inventory.ItemFactoryTest" time="1.109"/>
 </testsuite>

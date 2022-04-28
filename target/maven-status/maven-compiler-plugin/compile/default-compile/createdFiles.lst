@@ -66,7 +66,6 @@ org\bukkit\craftbukkit\inventory\CraftMetaCharge.class
 net\minecraft\server\EntityEnderman.class
 org\bukkit\material\MonsterEggs.class
 org\bukkit\craftbukkit\entity\CraftPlayer$1.class
-cubing\lib\bukkit\Event\ServerEventManager.class
 org\bukkit\craftbukkit\chunkio\ChunkIOExecutor.class
 org\bukkit\entity\EnderDragonPart.class
 org\bukkit\command\defaults\BanIpCommand.class
@@ -149,6 +148,7 @@ org\bukkit\event\block\BlockCanBuildEvent.class
 org\bukkit\entity\Blaze.class
 net\minecraft\server\EntityEnderman$PathfinderGoalEndermanPlaceBlock.class
 net\minecraft\server\PacketPlayInChat.class
+speedcubing\spigot\Event\events\PlayInChatEvent.class
 net\minecraft\server\EntityFallingBlock.class
 net\minecraft\server\TileEntityPiston.class
 org\bukkit\event\entity\FireworkExplodeEvent.class
@@ -238,6 +238,7 @@ org\bukkit\craftbukkit\block\CraftSign.class
 org\bukkit\Server.class
 net\minecraft\server\NameReferencingFileConverter$3.class
 net\minecraft\server\EntityWither$1.class
+speedcubing\spigot\Event\events\PlayInUseEntityEvent.class
 org\bukkit\craftbukkit\CraftEffect.class
 org\bukkit\map\MapRenderer.class
 net\minecraft\server\JsonList$JsonListEntrySerializer.class
@@ -377,7 +378,6 @@ org\bukkit\craftbukkit\entity\CraftEnderPearl.class
 net\minecraft\server\EntityLiving$1.class
 org\bukkit\craftbukkit\CraftCrashReport.class
 org\bukkit\material\Bed.class
-cubing\lib\bukkit\Event\events\PlayInChatEvent.class
 net\minecraft\server\JsonList.class
 net\minecraft\server\BlockEnderPortal.class
 net\minecraft\server\ContainerBrewingStand$SlotPotionBottle.class
@@ -576,7 +576,6 @@ net\minecraft\server\BlockPressurePlateBinary$SyntheticClass_1.class
 net\minecraft\server\EntityThrownExpBottle.class
 org\bukkit\Art.class
 net\minecraft\server\ContainerHorse$1.class
-cubing\lib\bukkit\Event\ServerEventHandler.class
 org\bukkit\Rotation.class
 org\bukkit\event\entity\PlayerLeashEntityEvent.class
 org\bukkit\event\inventory\InventoryOpenEvent.class
@@ -949,6 +948,7 @@ org\bukkit\event\player\PlayerUnleashEntityEvent.class
 net\minecraft\server\ContainerWorkbench.class
 net\minecraft\server\EnchantmentManager.class
 org\bukkit\event\block\Action.class
+speedcubing\spigot\Event\ServerEventHandler.class
 org\bukkit\craftbukkit\entity\CraftSpider.class
 net\minecraft\server\PathfinderGoalSit.class
 org\bukkit\craftbukkit\util\TerminalConsoleWriterThread.class
@@ -1419,6 +1419,7 @@ org\bukkit\plugin\messaging\PluginMessageRecipient.class
 net\minecraft\server\CommandSpreadPlayers.class
 org\bukkit\craftbukkit\command\CraftRemoteConsoleCommandSender.class
 org\bukkit\command\defaults\ReloadCommand.class
+speedcubing\spigot\Event\ServerEventManager.class
 net\minecraft\server\WorldServer$1.class
 org\bukkit\craftbukkit\scoreboard\CraftTeam.class
 org\bukkit\event\entity\CreatureSpawnEvent$SpawnReason.class
@@ -1594,7 +1595,6 @@ net\minecraft\server\ContainerBrewingStand$SlotBrewing.class
 org\bukkit\craftbukkit\TrigMath.class
 net\minecraft\server\SlotFurnaceResult.class
 org\bukkit\entity\HumanEntity.class
-cubing\lib\bukkit\Event\events\PlayInUseEntityEvent.class
 org\bukkit\conversations\Conversation$ConversationState.class
 org\bukkit\material\EnderChest.class
 org\bukkit\entity\ThrownPotion.class

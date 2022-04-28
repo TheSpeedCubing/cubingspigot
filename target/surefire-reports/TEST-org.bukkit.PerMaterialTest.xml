@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.bukkit.PerMaterialTest" time="0.2" tests="3850" errors="0" skipped="0" failures="0">
+<testsuite name="org.bukkit.PerMaterialTest" time="0.072" tests="3850" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin"/>
-    <property name="java.vm.version" value="25.202-b08"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\bin"/>
+    <property name="java.vm.version" value="25.311-b11"/>
     <property name="user.country.format" value="TW"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="maven.multiModuleProjectDirectory" value="C:/Users/andyt/Desktop/MinecraftServer/Development/Projects/Spigot-Server"/>
@@ -18,9 +18,9 @@
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\andyt\Desktop\MinecraftServer\Development\Projects\Spigot-Server"/>
-    <property name="java.runtime.version" value="1.8.0_202-b08"/>
+    <property name="java.runtime.version" value="1.8.0_311-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\andyt\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
@@ -29,7 +29,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:/Program Files/apache-maven-3.8.3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\andyt\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\andyt\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs;C:\Program Files (x86)\QuickTime\QTSystem;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\apache-maven-3.8.3\bin;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\andyt\AppData\Local\Programs\Python\Python39;C:\ffmpeg\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Microsoft\WindowsApps;C:\Users\andyt\AppData\Roaming\npm;C:\Users\andyt\AppData\Local\Programs\Microsoft VS Code\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_311\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\andyt\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\andyt\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\apache-maven-3.8.3\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Users\andyt\AppData\Local\Microsoft\WindowsApps;C:\Users\andyt\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
     <property name="maven.conf" value="C:/Program Files/apache-maven-3.8.3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -45,16 +45,16 @@
     <property name="java.class.path" value="C:/Program Files/apache-maven-3.8.3/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_202\jre"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_311\jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="zh"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_202"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_202\jre\classes"/>
+    <property name="java.version" value="1.8.0_311"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_311\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_311\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_311\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Program Files\apache-maven-3.8.3"/>
     <property name="file.separator" value="\"/>
@@ -64,14 +64,14 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="hasGravity[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0.002"/>
+  <testcase name="hasGravity[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0.007"/>
   <testcase name="isBurnable[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[0: AIR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -81,7 +81,7 @@
   <testcase name="isOccluding[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[1: STONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -93,12 +93,12 @@
   <testcase name="isFlammable[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[2: GRASS]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isOccluding[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[3: DIRT]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -214,14 +214,14 @@
   <testcase name="maxStackSize[14: GOLD_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[14: GOLD_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[14: GOLD_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="hasGravity[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="hasGravity[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxDurability[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxDurability[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isRecord[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[15: IRON_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[16: COAL_ORE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -258,7 +258,7 @@
   <testcase name="isBurnable[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isOccluding[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[19: SPONGE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -270,7 +270,7 @@
   <testcase name="maxDurability[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isFlammable[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[20: GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -308,7 +308,7 @@
   <testcase name="isBurnable[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isOccluding[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[24: SANDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -323,7 +323,7 @@
   <testcase name="isFlammable[25: NOTE_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[25: NOTE_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[25: NOTE_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[25: NOTE_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[25: NOTE_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[26: BED_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[26: BED_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[26: BED_BLOCK]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -340,11 +340,11 @@
   <testcase name="maxDurability[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isFlammable[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[27: POWERED_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="hasGravity[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="hasGravity[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0.003"/>
   <testcase name="isBurnable[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -355,7 +355,7 @@
   <testcase name="isTransparent[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[28: DETECTOR_RAIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isBurnable[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isBurnable[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[29: PISTON_STICKY_BASE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -530,7 +530,7 @@
   <testcase name="maxDurability[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isFlammable[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[46: TNT]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -601,7 +601,7 @@
   <testcase name="isOccluding[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[53: WOOD_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[54: CHEST]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -681,7 +681,7 @@
   <testcase name="isOccluding[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[61: FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[62: BURNING_FURNACE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -751,7 +751,7 @@
   <testcase name="isOccluding[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="maxStackSize[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isTransparent[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[68: WALL_SIGN]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[69: LEVER]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -768,7 +768,7 @@
   <testcase name="isBurnable[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isOccluding[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isRecord[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[70: STONE_PLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -838,7 +838,7 @@
   <testcase name="isBurnable[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isOccluding[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isRecord[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[77: STONE_BUTTON]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1013,7 +1013,7 @@
   <testcase name="isFlammable[94: DIODE_BLOCK_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[94: DIODE_BLOCK_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[94: DIODE_BLOCK_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[94: DIODE_BLOCK_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[94: DIODE_BLOCK_ON]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[95: STAINED_GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[95: STAINED_GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[95: STAINED_GLASS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1044,7 +1044,7 @@
   <testcase name="maxStackSize[97: MONSTER_EGGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[97: MONSTER_EGGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[97: MONSTER_EGGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="hasGravity[98: SMOOTH_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="hasGravity[98: SMOOTH_BRICK]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isBurnable[98: SMOOTH_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[98: SMOOTH_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[98: SMOOTH_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1172,7 +1172,7 @@
   <testcase name="isRecord[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isTransparent[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isTransparent[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[110: MYCEL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1183,7 +1183,7 @@
   <testcase name="isFlammable[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[111: WATER_LILY]" classname="org.bukkit.PerMaterialTest" time="0.002"/>
   <testcase name="hasGravity[112: NETHER_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[112: NETHER_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[112: NETHER_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1200,7 +1200,7 @@
   <testcase name="maxDurability[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isFlammable[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[113: NETHER_FENCE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1208,14 +1208,14 @@
   <testcase name="isBurnable[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isOccluding[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0.04"/>
   <testcase name="isRecord[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[114: NETHER_BRICK_STAIRS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isBurnable[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0.028"/>
+  <testcase name="isBurnable[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[115: NETHER_WARTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1516,7 +1516,7 @@
   <testcase name="isSolid[144: SKULL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isEdible[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0.107"/>
+  <testcase name="isEdible[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[145: ANVIL]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -1573,7 +1573,7 @@
   <testcase name="isFlammable[150: REDSTONE_COMPARATOR_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[150: REDSTONE_COMPARATOR_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[150: REDSTONE_COMPARATOR_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[150: REDSTONE_COMPARATOR_ON]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[150: REDSTONE_COMPARATOR_ON]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[151: DAYLIGHT_DETECTOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[151: DAYLIGHT_DETECTOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[151: DAYLIGHT_DETECTOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2018,7 +2018,7 @@
   <testcase name="isBurnable[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isOccluding[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isOccluding[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[195: JUNGLE_DOOR]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2441,8 +2441,8 @@
   <testcase name="isOccluding[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isTransparent[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxStackSize[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0.003"/>
+  <testcase name="isTransparent[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[237: SEEDS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[238: WHEAT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[238: WHEAT]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2523,7 +2523,7 @@
   <testcase name="isFlammable[245: CHAINMAIL_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[245: CHAINMAIL_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[245: CHAINMAIL_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[245: CHAINMAIL_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[245: CHAINMAIL_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[246: CHAINMAIL_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[246: CHAINMAIL_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[246: CHAINMAIL_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2540,7 +2540,7 @@
   <testcase name="maxDurability[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0.032"/>
+  <testcase name="isFlammable[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[247: CHAINMAIL_BOOTS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2563,7 +2563,7 @@
   <testcase name="isFlammable[249: IRON_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[249: IRON_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[249: IRON_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[249: IRON_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isSolid[249: IRON_CHESTPLATE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="hasGravity[250: IRON_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[250: IRON_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[250: IRON_LEGGINGS]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2681,7 +2681,7 @@
   <testcase name="isOccluding[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxStackSize[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="maxStackSize[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isTransparent[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[261: PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[262: GRILLED_PORK]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2750,7 +2750,7 @@
   <testcase name="maxDurability[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isFlammable[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="maxStackSize[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[268: WATER_BUCKET]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2802,7 +2802,7 @@
   <testcase name="isRecord[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isTransparent[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isTransparent[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[273: REDSTONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[274: SNOW_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[274: SNOW_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2856,7 +2856,7 @@
   <testcase name="isSolid[278: CLAY_BRICK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isEdible[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isEdible[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="maxDurability[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[279: CLAY_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2893,13 +2893,13 @@
   <testcase name="isFlammable[282: BOOK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[282: BOOK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[282: BOOK]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[282: BOOK]" classname="org.bukkit.PerMaterialTest" time="0.004"/>
-  <testcase name="hasGravity[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isSolid[282: BOOK]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="hasGravity[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isRecord[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isRecord[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isFlammable[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[283: SLIME_BALL]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -2929,7 +2929,7 @@
   <testcase name="isEdible[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isRecord[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0.003"/>
+  <testcase name="isRecord[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[286: EGG]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -3004,7 +3004,7 @@
   <testcase name="maxStackSize[293: INK_SACK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[293: INK_SACK]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[293: INK_SACK]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="hasGravity[294: BONE]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="hasGravity[294: BONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[294: BONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[294: BONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[294: BONE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -3017,7 +3017,7 @@
   <testcase name="hasGravity[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="maxDurability[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="maxDurability[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isFlammable[295: SUGAR]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -3450,7 +3450,7 @@
   <testcase name="maxDurability[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isRecord[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isFlammable[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isFlammable[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="maxStackSize[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[338: GOLDEN_CARROT]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -3633,7 +3633,7 @@
   <testcase name="isFlammable[356: RABBIT_FOOT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxStackSize[356: RABBIT_FOOT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isTransparent[356: RABBIT_FOOT]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isSolid[356: RABBIT_FOOT]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
+  <testcase name="isSolid[356: RABBIT_FOOT]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[357: RABBIT_HIDE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isBurnable[357: RABBIT_HIDE]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isEdible[357: RABBIT_HIDE]" classname="org.bukkit.PerMaterialTest" time="0"/>
@@ -3815,7 +3815,7 @@
   <testcase name="isTransparent[374: GREEN_RECORD]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isSolid[374: GREEN_RECORD]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="hasGravity[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0"/>
-  <testcase name="isBurnable[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0"/>
+  <testcase name="isBurnable[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0.001"/>
   <testcase name="isEdible[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="maxDurability[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0"/>
   <testcase name="isOccluding[375: RECORD_3]" classname="org.bukkit.PerMaterialTest" time="0"/>
