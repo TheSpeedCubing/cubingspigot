@@ -1,14 +1,19 @@
-From b50a9b1424f3392de0e74f8c34f62f0e80189df5 Mon Sep 17 00:00:00 2001
+From 43a0b65d4b6f37f7efb2aca9bf6ac363b59a650e Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Mon, 21 Jun 2021 03:29:33 -0300
 Subject: [PATCH] Limit ChatComponents
 
 
 diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-index 463cfe49f..9991c0277 100644
+index 463cfe49f..506c99318 100644
 --- a/src/main/java/net/minecraft/server/IChatBaseComponent.java
 +++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-@@ -40,17 +40,31 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
+@@ -36,21 +36,36 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
+ 
+     public static class ChatSerializer implements JsonDeserializer<IChatBaseComponent>, JsonSerializer<IChatBaseComponent> {
+ 
++        private static final int CHATCOMPONENT_LIMIT = 128;
+         private static final Gson a;
  
          public ChatSerializer() {}
  
@@ -21,7 +26,7 @@ index 463cfe49f..9991c0277 100644
                      JsonArray jsonarray = jsonelement.getAsJsonArray();
 +
 +                    // FlamePaper start - Limit ChatComponents
-+                    if (jsonarray.size() > 12) {
++                    if (jsonarray.size() > CHATCOMPONENT_LIMIT) {
 +                        throw new JsonParseException("Too many ChatComponent array elements");
 +                    }
 +                    // FlamePaper end - Limit Chatcomponents
@@ -41,13 +46,13 @@ index 463cfe49f..9991c0277 100644
                          IChatBaseComponent ichatbasecomponent1 = this.a(jsonelement1, (Type) jsonelement1.getClass(), jsondeserializationcontext);
  
                          if (ichatbasecomponent == null) {
-@@ -75,10 +89,29 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
+@@ -75,10 +90,29 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
  
                      if (jsonobject.has("with")) {
                          JsonArray jsonarray1 = jsonobject.getAsJsonArray("with");
 +
 +                        // FlamePaper start - Limit ChatComponents
-+                        if (jsonarray1.size() > 12) {
++                        if (jsonarray1.size() > CHATCOMPONENT_LIMIT) {
 +                            throw new JsonParseException("Too many ChatComponent array elements in with");
 +                        }
 +                        // FlamePaper end - Limit Chatcomponents
@@ -72,18 +77,18 @@ index 463cfe49f..9991c0277 100644
                              if (aobject[i] instanceof ChatComponentText) {
                                  ChatComponentText chatcomponenttext = (ChatComponentText) aobject[i];
  
-@@ -114,12 +147,30 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
+@@ -114,12 +148,30 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
                  if (jsonobject.has("extra")) {
                      JsonArray jsonarray2 = jsonobject.getAsJsonArray("extra");
  
 +                    // FlamePaper start - Limit ChatComponents
-+                    if (jsonarray2.size() > 12) {
++                    if (jsonarray2.size() > CHATCOMPONENT_LIMIT) {
 +                        throw new JsonParseException("Too many ChatComponent array elements in extra");
 +                    }
 +                    // FlamePaper end - Limit Chatcomponents
 +
 +                    // FlamePaper start - Limit ChatComponents
-+                    if (extraCount > 12) {
++                    if (extraCount > CHATCOMPONENT_LIMIT) {
 +                        throw new JsonParseException("Too many stacked extra ChatComponent elements");
 +                    }
 +                    // FlamePaper end - Limit Chatcomponents
@@ -104,7 +109,7 @@ index 463cfe49f..9991c0277 100644
                      }
                  }
  
-@@ -129,7 +180,7 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
+@@ -129,7 +181,7 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
          }
  
          public IChatBaseComponent a(JsonElement jsonelement, Type type, JsonDeserializationContext jsondeserializationcontext) throws JsonParseException {

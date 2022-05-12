@@ -124,6 +124,8 @@ import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.base64.Base64;
 import jline.console.ConsoleReader;
 import net.md_5.bungee.api.chat.BaseComponent;
+import speedcubing.spigot.Event.ServerEventManager;
+import speedcubing.spigot.Event.events.TabCompleteCommandEvent;
 
 public final class CraftServer implements Server {
     private static final Player[] EMPTY_PLAYER_ARRAY = new Player[0];
@@ -1634,6 +1636,8 @@ public final class CraftServer implements Server {
             getLogger().log(Level.SEVERE, "Exception when " + player.getName() + " attempted to tab complete " + message, ex);
         }
 
+        TabCompleteCommandEvent event = new TabCompleteCommandEvent(player,message,completions);
+        ServerEventManager.callEvent(event);
         return completions == null ? ImmutableList.<String>of() : completions;
     }
 
