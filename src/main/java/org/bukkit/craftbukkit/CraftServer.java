@@ -1638,6 +1638,7 @@ public final class CraftServer implements Server {
 
         TabCompleteCommandEvent event = new TabCompleteCommandEvent(player,message,completions);
         ServerEventManager.callEvent(event);
+        completions = event.completions;
         return completions == null ? ImmutableList.<String>of() : completions;
     }
 
