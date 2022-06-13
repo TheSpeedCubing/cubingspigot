@@ -3,9 +3,6 @@ package net.minecraft.server;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Floats;
-import speedcubing.spigot.Event.ServerEventManager;
-import speedcubing.spigot.Event.events.PlayInChatEvent;
-import speedcubing.spigot.Event.events.PlayInUseEntityEvent;
 import io.netty.buffer.Unpooled;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
@@ -951,12 +948,6 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
         if (packetplayinchat.a().startsWith("/")) {
             PlayerConnectionUtils.ensureMainThread(packetplayinchat, this, this.player.u());
         }
-        //cubing start
-        PlayInChatEvent inChatEvent = new PlayInChatEvent(player.getBukkitEntity(),packetplayinchat);
-        ServerEventManager.callEvent(inChatEvent);
-        if (inChatEvent.isCancelled)
-            return;
-        //cubing end
         // CraftBukkit end
         if (this.player.dead || this.player.getChatFlags() == EntityHuman.EnumChatVisibility.HIDDEN) { // CraftBukkit - dead men tell no tales
             ChatMessage chatmessage = new ChatMessage("chat.cannotSend", new Object[0]);
@@ -1309,12 +1300,6 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
     public void a(PacketPlayInUseEntity packetplayinuseentity) {
         if (this.player.dead) return; // CraftBukkit
         PlayerConnectionUtils.ensureMainThread(packetplayinuseentity, this, this.player.u());
-        //cubing start
-        PlayInUseEntityEvent inUseEntityEvent = new PlayInUseEntityEvent(player.getBukkitEntity(),packetplayinuseentity);
-        ServerEventManager.callEvent(inUseEntityEvent);
-        if (inUseEntityEvent.isCancelled)
-            return;
-        //cubing end
         WorldServer worldserver = this.minecraftServer.getWorldServer(this.player.dimension);
         Entity entity = packetplayinuseentity.a((World) worldserver);
         // Spigot Start
