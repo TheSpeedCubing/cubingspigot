@@ -6,6 +6,7 @@ import net.minecraft.server.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import sun.security.provider.ConfigFile;
 
 public class RestartCommand extends Command
 {
@@ -37,16 +38,18 @@ public class RestartCommand extends Command
 
     public static void restart()
     {
-        restart( new File( SpigotConfig.restartScript ) );
+        restart( null );
     }
 
-    public static void restart(final File script)
+    public static void restart(final String[] args)
     {
         AsyncCatcher.enabled = false; // Disable async catcher incase it interferes with us
         try
         {
-            if ( script.isFile() )
+            final File script = new File(SpigotConfig.restartScript);
+            if ( args != null || script.isFile() )
             {
+                if(args == null)
                 System.out.println( "Attempting to restart with " + SpigotConfig.restartScript );
 
                 // Disable Watchdog
@@ -91,6 +94,7 @@ public class RestartCommand extends Command
                     {
                         try
                         {
+                            if(args == null) {
                             String os = System.getProperty( "os.name" ).toLowerCase();
                             if ( os.contains( "win" ) )
                             {
@@ -102,6 +106,7 @@ public class RestartCommand extends Command
                                     "sh", script.getPath()
                                 } );
                             }
+                            } else Runtime.getRuntime().exec(args);
                         } catch ( Exception e )
                         {
                             e.printStackTrace();
