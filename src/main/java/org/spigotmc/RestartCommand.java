@@ -2,6 +2,8 @@ package org.spigotmc;
 
 import java.io.File;
 import java.util.List;
+
+import com.sun.scenario.animation.shared.FiniteClipEnvelope;
 import net.minecraft.server.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import org.bukkit.command.Command;
@@ -35,21 +37,21 @@ public class RestartCommand extends Command
         }
         return true;
     }
+    public static String[] customRestartArg;
 
     public static void restart()
     {
-        restart( null );
+        restart( new File( SpigotConfig.restartScript ) );
     }
 
-    public static void restart(final String[] args)
+    public static void restart(final File script)
     {
         AsyncCatcher.enabled = false; // Disable async catcher incase it interferes with us
         try
         {
-            final File script = new File(SpigotConfig.restartScript);
-            if ( args != null || script.isFile() )
+            if ( customRestartArg != null || script.isFile() )
             {
-                if(args == null)
+                if(customRestartArg == null)
                 System.out.println( "Attempting to restart with " + SpigotConfig.restartScript );
 
                 // Disable Watchdog
@@ -94,7 +96,7 @@ public class RestartCommand extends Command
                     {
                         try
                         {
-                            if(args == null) {
+                            if(customRestartArg == null) {
                             String os = System.getProperty( "os.name" ).toLowerCase();
                             if ( os.contains( "win" ) )
                             {
@@ -106,7 +108,7 @@ public class RestartCommand extends Command
                                     "sh", script.getPath()
                                 } );
                             }
-                            } else Runtime.getRuntime().exec(args);
+                            } else Runtime.getRuntime().exec(customRestartArg);
                         } catch ( Exception e )
                         {
                             e.printStackTrace();
