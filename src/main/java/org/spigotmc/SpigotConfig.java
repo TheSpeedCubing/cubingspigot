@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.Collections;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -302,10 +303,9 @@ public class SpigotConfig
     public static List<String> spamExclusions;
     private static void spamExclusions()
     {
-        spamExclusions = getList( "commands.spam-exclusions", Arrays.asList( new String[]
-        {
-                "/skill"
-        } ) );
+        spamExclusions = getList( "commands.spam-exclusions",
+                Collections.emptyList()
+                );
     }
 
     public static boolean silentCommandBlocks;
